@@ -20,7 +20,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    -name: make deplyScript executable
+    - name: make deplyScript executable
       run: chmod +x ./deploy.sh
     # Runs a single command using the runners shell
     - name: deploy
