@@ -33,4 +33,4 @@ jobs:
       run: 'echo {"projects":{"default" : "${{ secrets.projectId }}"}} > .firebaseserc'
 
     - name: deploy
-      run: firebase deploy --token  ${{ secrets.firebaseToken }}  --project ${{ secrets.projectId }}"}}
+      run: firebase deploy --token  ${{ secrets.firebaseToken }}  --project ${{ secrets.projectId }}
