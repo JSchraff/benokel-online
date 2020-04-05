@@ -20,8 +20,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-      - name: fix global install
-          run: npm config set unsafe-perm=true
+    - name: fix global install
+      run: npm config set unsafe-perm=true
 
     - name: install vue
       run: npm install -g @vue/cli
