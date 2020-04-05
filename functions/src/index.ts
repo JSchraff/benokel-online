@@ -11,7 +11,7 @@ export const initialize_game = functions.https.onRequest((request, response) => 
     };
 
     let prom: Promise<void>;
-    prom = db.ref().set(JSON.stringify(gameData));
+    prom = db.ref().set(gameData);
     response.send(gameData);
     return prom
 });
