@@ -24,7 +24,9 @@ jobs:
       run: npm install @vue/cli
 
     - name: install firebase tools
-      run: npm install firebase-tools
+      run: |
+        npm install firebase-tools
+        alias firebase="`npm config get prefix`/bin/firebase"
 
     - name: building vue
       run: npm run build
