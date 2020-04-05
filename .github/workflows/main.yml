@@ -27,7 +27,9 @@ jobs:
       run: sudo npm install -g firebase-tools
 
     - name: install npm modules
-      run: npm install
+      run: |
+        npm install firebase-functions
+        npm install firebase-admin
 
     - name: building vue
       run: npm run build
