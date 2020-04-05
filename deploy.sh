@@ -8,4 +8,4 @@ npm install firebase-tools
 #building vue application
 npm run build
 #deploying to firebase
-firebase deploy --token $firebaseToken
+firebase deploy --token "$firebaseToken"
