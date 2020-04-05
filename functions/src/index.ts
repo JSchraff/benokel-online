@@ -3,15 +3,12 @@ import * as admin from 'firebase-admin';
 import * as uuid from 'uuid';
 
 let app = admin.initializeApp();
+let db = app.database();
 export const initialize_game = functions.https.onRequest((request, response) => {
-    let db = app.database();
+    let gameId = uuid.v4();
 
-    let gameData = {
-        "id": uuid.v4(),
-    };
 
-    let prom: Promise<void>;
-    prom = db.ref().set(gameData);
-    response.send(gameData);
-    return prom
+    let prom = db.ref(gameId).set("test");
+    response.send("setup new Game");
+    return prom;
 });
