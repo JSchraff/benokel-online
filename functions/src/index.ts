@@ -1,10 +1,11 @@
 import * as functions from 'firebase-functions';
-// Start writing Firebase Functions
-// https://firebase.google.com/docs/functions/typescript
-export const helloWorld = functions.https.onRequest((request, response) => {
- response.send("Hello from Firebase!");
-});
+import * as uuid from 'uuid';
 
-export const helloWorld2 = functions.https.onRequest((request, response) => {
-    response.send("test other function same file");
+export const initialize_game = functions.https.onRequest((request, response) => {
+
+
+    let gameData = {
+        "id": uuid.v4()
+    };
+    response.send(gameData);
 });
