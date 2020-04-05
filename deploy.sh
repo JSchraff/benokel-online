@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-echo "{"projects":{"default" : "$projectId"}}" > .firebaseserc
+###########################################deploying vue################################################################
+
+echo "{\"projects\":{\"default\" : \"$projectId\"}}" > .firebaseserc
 #installing vue cli
 npm install @vue/cli
 #installing firebase tools
@@ -9,3 +11,5 @@ npm install firebase-tools
 npm run build
 #deploying to firebase
 firebase deploy --token "$firebaseToken"
+
+###########################################deploying node backend#######################################################
