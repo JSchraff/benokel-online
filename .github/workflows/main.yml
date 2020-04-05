@@ -30,7 +30,7 @@ jobs:
       run: npm run build
 
     - name: setup firebaseserc
-      run: echo "{\"projects\":{\"default\" : \"${{ secrets.projectId }}\"}}" > .firebaseserc
+      run: 'echo {"projects":{"default" : "${{ secrets.projectId }}"}} > .firebaseserc'
 
     - name: deploy
       run: firebase deploy --token  ${{ secrets.firebaseToken }}
