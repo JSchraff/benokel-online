@@ -18,14 +18,19 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: make deployScript executable
-      run: chmod +x ./deploy.sh
-    # Runs a single command using the runners shell
+    - name: install vue
+      run: npm install @vue/cli
+
+    - name: install firebase tools
+      run: npm install firebase-tools
+
+    - name: building vue
+      run: npm run build
+
+    - name: setup firebaseserc
+      run: echo "{\"projects\":{\"default\" : \"${{ secrets.projectId }}\"}}" > .firebaseserc
+
     - name: deploy
-      run: ./deploy.sh
-      env:
-        projectId: ${{ secrets.projectId }}
-        firebaseToken: ${{ secrets.firebaseToken }}
+      run: firebase deploy --token  ${{ secrets.firebaseToken }}
