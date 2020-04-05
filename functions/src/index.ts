@@ -4,13 +4,13 @@ import * as uuid from 'uuid';
 
 let app = admin.initializeApp();
 export const initialize_game = functions.https.onRequest((request, response) => {
-    let db = app.firestore();
+    let db = app.database();
+    db.ref().set("test");
 
 
 
     let gameData = {
         "id": uuid.v4(),
     };
-    db.collection("benokel-online").add(gameData);
     response.send(gameData);
 });
