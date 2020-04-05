@@ -5,7 +5,7 @@ export const initialize_game = functions.https.onRequest((request, response) => 
 
 
     let gameData = {
-        "id": uuid.v4()
+        "id": uuid.v4(),
     };
     response.send(gameData);
 });
