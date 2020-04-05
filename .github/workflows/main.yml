@@ -30,7 +30,7 @@ jobs:
       run: npm install
 
     - name: install npm modules for functions
-        run: npm install functions
+      run: npm install functions
 
     - name: building vue
       run: npm run build
