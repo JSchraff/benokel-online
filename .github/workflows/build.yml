@@ -1,13 +1,12 @@
-# This is a basic workflow to help you get started with Actions
 
-name: DEPLOY
+name: BUILD
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-      branches:
-          - release
+    branches-ignore:
+        - release
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,6 +27,3 @@ jobs:
 
     - name: building vue
       run: npm run build
-
-    - name: deploy
-      run: firebase deploy --token  ${{ secrets.firebaseToken }}  --project ${{ secrets.projectId }}
